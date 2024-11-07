@@ -262,3 +262,7 @@
   });
 
 })()
+
+function scrollToAnchor() {
+  document.getElementById('target').scrollIntoView({ behavior: 'smooth' });
+}
