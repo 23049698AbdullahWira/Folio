@@ -23,6 +23,29 @@ body {
   box-sizing: border-box;
 }
 
+/* Ensure the carousel items are stacked properly */
+.carousel-inner {
+  display: flex;  /* Use flexbox to align items horizontally */
+  overflow: hidden;  /* Prevents the gap between items */
+}
+
+.carousel-item {
+  flex: 0 0 100%;  /* Ensure each item takes up full width */
+  transition: transform 0.5s ease-in-out;  /* Smooth slide transition */
+  position: relative;  /* Position each item normally */
+}
+
+/* Prevent gap in non-active items */
+.carousel-item-next, .carousel-item-prev {
+  transform: translateX(0);  /* Keeps items in place while transitioning */
+}
+
+/* Make sure the active item is shown without gaps */
+.carousel-item.active {
+  position: relative; /* Keep active item visible */
+  opacity: 1;  /* Make sure the active item is fully visible */
+}
+
 h1,
 h2,
 h3,
@@ -449,7 +472,7 @@ p {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/home-bg.jpg") repeat scroll center center/cover;
+  background: url("../img/NewHeroimage.png") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
